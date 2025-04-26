@@ -559,6 +559,8 @@ def initialize_whatsapp_driver():
         chrome_options.add_argument("--start-maximized")
         chrome_options.add_argument("--disable-infobars")
         chrome_options.add_argument("--disable-extensions")
+        chrome_options.add_argument('--disable-gpu')
+        chrome_options.add_argument('--headless')
         
         # Uncomment the line below if you want to run in headless mode (no UI)
         # chrome_options.add_argument("--headless")
