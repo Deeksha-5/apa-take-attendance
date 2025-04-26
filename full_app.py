@@ -510,6 +510,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.core.os_manager import ChromeType
 from selenium.webdriver.chrome.service import Service
 import urllib.parse
 import base64
@@ -566,7 +567,7 @@ def initialize_whatsapp_driver():
         # chrome_options.add_argument("--headless")
         
         # Initialize the driver with webdriver-manager for automatic chromedriver download
-        service = Service(ChromeDriverManager().install())
+        service = Service(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
         driver = webdriver.Chrome(service=service, options=chrome_options)
         
         # Open WhatsApp Web
